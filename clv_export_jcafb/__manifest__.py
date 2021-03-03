@@ -5,7 +5,7 @@
 {
     'name': 'Export (customizations for CLVhealth-JCAFB Solution)',
     'summary': 'Export Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '12.0.4.0',
+    'version': '14.0.5.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
     'license': 'AGPL-3',
@@ -20,7 +20,6 @@
         'data/global_settings.xml',
         'views/model_export_template_code_view.xml',
         'views/model_export_code_view.xml',
-        'views/export_menu_view.xml',
     ],
     'demo': [],
     'test': [],
