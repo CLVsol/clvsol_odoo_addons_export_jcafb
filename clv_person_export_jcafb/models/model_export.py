@@ -58,7 +58,6 @@ class ModelExport(models.Model):
 
         return new_model_export
 
-    # @api.multi
     def write(self, values):
 
         ModelExportDocumentItem = self.env['clv.model_export.document_item']
@@ -106,7 +105,6 @@ class ModelExport(models.Model):
 class ModelExport_xls(models.Model):
     _inherit = 'clv.model_export'
 
-    # @api.multi
     def do_model_export_execute_xls_person(self):
 
         start = time()
@@ -370,7 +368,6 @@ class ModelExport_xls(models.Model):
 class ModelExport_csv(models.Model):
     _inherit = 'clv.model_export'
 
-    # @api.multi
     def do_model_export_execute_csv_person(self):
 
         start = time()
@@ -584,7 +581,6 @@ class ModelExport_csv(models.Model):
 class ModelExport_sqlite(models.Model):
     _inherit = 'clv.model_export'
 
-    # @api.multi
     def do_model_export_execute_sqlite_person(self):
 
         start = time()

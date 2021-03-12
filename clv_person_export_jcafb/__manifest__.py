@@ -5,13 +5,12 @@
 {
     'name': 'Person Export (customizations for CLVhealth-JCAFB Solution)',
     'summary': 'Person Export Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '12.0.4.0',
+    'version': '14.0.5.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
     'license': 'AGPL-3',
     'website': 'https://github.com/CLVsol',
     'depends': [
-        'clv_person_l10n_br',
         'clv_person_jcafb',
         'clv_export_jcafb',
     ],
