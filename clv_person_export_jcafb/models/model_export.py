@@ -206,10 +206,16 @@ class ModelExport_xls(models.Model):
                 col_nr = 0
                 if self.export_all_fields is False:
                     for field in self.model_export_field_ids:
-                        row.write(col_nr, self._get_value(
-                            item, field.field_id,
-                            self.export_date_format, self.export_datetime_format)
-                        )
+                        if field.raw_value:
+                            row.write(col_nr, self._get_raw_value(
+                                item, field.field_id,
+                                self.export_date_format, self.export_datetime_format)
+                            )
+                        else:
+                            row.write(col_nr, self._get_value(
+                                item, field.field_id,
+                                self.export_date_format, self.export_datetime_format)
+                            )
                         col_nr += 1
 
                 else:
@@ -470,10 +476,16 @@ class ModelExport_csv(models.Model):
                 if self.export_all_fields is False:
                     for field in self.model_export_field_ids:
                         # row.insert(col_nr, self._get_value_csv(
-                        row.insert(col_nr, self._get_value(
-                            item, field.field_id,
-                            self.export_date_format, self.export_datetime_format)
-                        )
+                        if field.raw_value:
+                            row.insert(col_nr, self._get_raw_value(
+                                item, field.field_id,
+                                self.export_date_format, self.export_datetime_format)
+                            )
+                        else:
+                            row.insert(col_nr, self._get_value(
+                                item, field.field_id,
+                                self.export_date_format, self.export_datetime_format)
+                            )
                         col_nr += 1
 
                 else:
@@ -731,10 +743,16 @@ class ModelExport_sqlite(models.Model):
                 values = ()
                 if self.export_all_fields is False:
                     for field in self.model_export_field_ids:
-                        values += (self._get_value(
-                            item, field.field_id,
-                            self.export_date_format, self.export_datetime_format),
-                        )
+                        if field.raw_value:
+                            values += (self._get_raw_value(
+                                item, field.field_id,
+                                self.export_date_format, self.export_datetime_format),
+                            )
+                        else:
+                            values += (self._get_value(
+                                item, field.field_id,
+                                self.export_date_format, self.export_datetime_format),
+                            )
                         col_nr += 1
 
                 else:
